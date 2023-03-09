@@ -60,5 +60,6 @@ export default {
 
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL || 'http://localhost:5601',
+    apiKey: process.env.API_KEY || 'NV9xWXhZWUI5djlQNFQ2aGY4M3g6dWZ4OFZGcTlTcnFSV3FYcWZ2X194Zw=='
   },
 }

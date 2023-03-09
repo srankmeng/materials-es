@@ -121,13 +121,55 @@ export default {
   data() {
     return {
       materials: [],
+      payload: {
+        "from": 0, 
+        "size": 100,
+        "query": {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "spec_no": ""
+                }
+              },
+              {
+                "match_phrase": {
+                  "spec_issue_no": ""
+                }
+              },
+              {
+                "term": {
+                  "spec_name": "chinese"
+                }
+              },
+              {
+                "term": {
+                  "spec_shortname": ""
+                }
+              },
+              {
+                "term": {
+                  "originator": ""
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      }
     }
   },
 
   methods: {
     async search() {
-      const res = await this.$axios.get(`${this.$config.apiUrl}/users`)
+      const res = await this.$axios.post(`${this.$config.apiUrl}/api/console/proxy?path=materials/_search&method=GET`, this.payload, {
+        headers: {
+          Authorization: 'ApiKey ' + this.ApiKey,
+          'kbn-xsrf': 'true'
+        }
+      })
       this.materials = res?.data || []
+      console.log("materials : ", this.materials);
     },
   }
 }
