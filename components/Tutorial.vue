@@ -162,14 +162,20 @@ export default {
 
   methods: {
     async search() {
-      const res = await this.$axios.post(`${this.$config.apiUrl}/api/console/proxy?path=materials/_search&method=GET`, this.payload, {
+      const res = await this.$axios.post(`http://localhost:8080/${this.$config.apiUrl}/api/console/proxy?path=materials_2%2F_search&method=GET`, this.payload, {
         headers: {
-          Authorization: `ApiKey ${this.ApiKey}`,
+          Authorization: `ApiKey ${this.$config.apiKey}`,
           'kbn-xsrf': 'true'
         }
       })
-      this.materials = res?.data || []
-      console.log("materials : ", this.materials);
+      this.materials = res?.data.hits.hits.map(item => {
+        const obj = item._source
+        return {
+          ...obj,
+        }
+      }) || []
+
+
     },
   }
 }

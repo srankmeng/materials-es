@@ -44,7 +44,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost:5601',
+    baseURL: '/',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -60,6 +60,6 @@ export default {
 
   publicRuntimeConfig: {
     apiKey: process.env.API_KEY || 'NV9xWXhZWUI5djlQNFQ2aGY4M3g6dWZ4OFZGcTlTcnFSV3FYcWZ2X194Zw=='
-    apiUrl: process.env.API_URL || 'localhost:5601',
+    apiUrl: process.env.API_URL || 'http://localhost:5601',
   },
 }
