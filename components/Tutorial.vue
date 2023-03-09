@@ -164,7 +164,7 @@ export default {
     async search() {
       const res = await this.$axios.post(`${this.$config.apiUrl}/api/console/proxy?path=materials/_search&method=GET`, this.payload, {
         headers: {
-          Authorization: 'ApiKey ' + this.ApiKey,
+          Authorization: `ApiKey ${this.ApiKey}`,
           'kbn-xsrf': 'true'
         }
       })
