@@ -1,8 +1,8 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
+  <div class="relative min-h-screen bg-gray-100 p-8">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-    <div class="mx-auto p-8 bg-gray-200">
+    <div class="container p-8 mx-auto bg-gray-200">
      
       <div class="m-16">
         <img class="w-24 h-24 mx-auto ..." src="../static/logo.png">
