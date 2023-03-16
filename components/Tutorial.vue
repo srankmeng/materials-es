@@ -243,7 +243,6 @@ export default {
         }
       }
 
-      // const res = await this.$axios.post(`http://localhost:8080/${this.$config.apiUrl}/api/console/proxy?path=materials%2F_search&method=GET`,
       const res = await this.$axios.post(`${this.$config.apiUrl}/materials/_search`,
         {
           from: 0, 
@@ -255,10 +254,6 @@ export default {
             username: this.$config.elasticUsername,
             password: this.$config.elasticPassword,
           }
-          // headers: {
-          //   Authorization: `ApiKey ${this.$config.apiKey}`,
-          //   'kbn-xsrf': 'true'
-          // }
         })
       this.materials = res?.data.hits.hits.map(item => {
         const obj = item._source
@@ -268,7 +263,6 @@ export default {
       }) || []
 
       // get total count result
-      // const resCount = await this.$axios.post(`http://localhost:8080/${this.$config.apiUrl}/api/console/proxy?path=materials%2F_count&method=GET`,
       const resCount = await this.$axios.post(`${this.$config.apiUrl}/materials/_count`,
         {
           ...payload
@@ -278,10 +272,6 @@ export default {
             username: this.$config.elasticUsername,
             password: this.$config.elasticPassword,
           }
-          // headers: {
-          //   Authorization: `ApiKey ${this.$config.apiKey}`,
-          //   'kbn-xsrf': 'true'
-          // }
         })
       this.count = resCount?.data.count || 0
     },

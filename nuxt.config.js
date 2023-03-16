@@ -62,6 +62,5 @@ export default {
     apiUrl: process.env.API_URL || 'http://localhost:9200',
     elasticUsername: 'elastic',
     elasticPassword: 'xitgmLwmp',
-    // apiKey: process.env.API_KEY || 'VWtZanhvWUJ0Tm5GckllVWk2eWE6VXZxT2hnTU9RRC1jWGhRT1BYRU8xZw=='
   },
 }
