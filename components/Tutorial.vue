@@ -182,8 +182,8 @@ export default {
           {
             range: {
               effective_date: {
-                gte: "01-Nov-21 12.00.00 AM",
-                lte: "01-Nov-22 12.00.00 AM"
+                gte: "01-Nov-21",
+                lte: "01-Nov-22"
               }
             }
           }
@@ -195,8 +195,8 @@ export default {
           {
             range: {
               effective_date: {
-                gte: "01-Nov-23 12.00.00 AM",
-                lte: "01-Nov-24 12.00.00 AM"
+                gte: "01-Nov-23",
+                lte: "01-Nov-24"
               }
             }
           }
